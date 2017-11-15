@@ -1,0 +1,1 @@
+/home/dsevosty/git/0redhat/keycloak-quickstarts/s2i/bin/keycloak-assemble.sh
