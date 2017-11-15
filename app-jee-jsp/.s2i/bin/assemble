@@ -8,4 +8,4 @@ if [ -r "/tmp/src/$KEYCLOAK_EXAMPLE_JSON" ] ; then
 	> /tmp/src/config/keycloak.json
 fi
 
-exec /usr/libexec/s2i/assemble
+exec /usr/local/s2i/assemble
