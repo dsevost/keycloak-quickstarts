@@ -7,3 +7,5 @@ if [ -r "/tmp/src/$KEYCLOAK_EXAMPLE_JSON" ] ; then
 	sed "s|\"auth-server-url\": \"http://localhost:8180/auth\"|\"auth-server-url\": \"$SSO_SERVER_AUTH_URL\"|" \
 	> /tmp/src/config/keycloak.json
 fi
+
+exec /usr/libexec/s2i/assemble
