@@ -1,13 +1,20 @@
 #!/bin/bash
 
-KEYCLOAK_EXAMPLE_JSON=config/keycloak-example.json
+[ "$SCRIPT_DEBUG" = "true" ] && set -x
 
-touch /tmp/src/config/keycloak.json
+echo "Execute custom S2I assemble script..."
+
+KEYCLOAK_EXAMPLE_JSON=config/keycloak-example.json
+KEYCLOAL_JSON=/tmp/src/config/keycloak.json
+
+touch $KEYCLOAL_JSON
 
 if [ -r "/tmp/src/$KEYCLOAK_EXAMPLE_JSON" ] ; then
+    echo "$KEYCLOAK_EXAMPLE_JSON found, creating $KEYCLOAL_JSON with \$SSO_SERVER_AUTH_URL=$SSO_SERVER_AUTH_URL"
     cat /tmp/src/$KEYCLOAK_EXAMPLE_JSON | \
 	sed "s|\"auth-server-url\": \"http://localhost:8180/auth\"|\"auth-server-url\": \"$SSO_SERVER_AUTH_URL\"|" \
-	> /tmp/src/config/keycloak.json
+	> $KEYCLOAL_JSON
 fi
 
+echo "Execute original S2I assemble script..."
 exec /usr/local/s2i/assemble
