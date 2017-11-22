@@ -86,7 +86,7 @@
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>${version.enforcer.maven.plugin}</version>
                 <executions>
-                    <execution>
+                    <!-- execution>
                         <id>enforce-files-exist</id>
                         <goals>
                             <goal>enforce</goal>
@@ -101,7 +101,7 @@
                             </rules>
                             <fail>true</fail>
                         </configuration>
-                    </execution>
+                    </execution -->
                 </executions>
             </plugin>
 
@@ -110,7 +110,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>${version.war.maven.plugin}</version>
                 <configuration>
-                    <webResources>
+                    <!-- webResources>
                         <resource>
                             <directory>${basedir}/config</directory>
                             <includes>
@@ -118,7 +118,7 @@
                             </includes>
                             <targetPath>WEB-INF</targetPath>
                         </resource>
-                    </webResources>
+                    </webResources -->
                 </configuration>
             </plugin>
 
