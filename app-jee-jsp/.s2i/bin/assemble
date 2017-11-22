@@ -4,7 +4,7 @@
 
 echo "Execute custom S2I assemble script..."
 
-KEYCLOAK_EXAMPLE_JSON=config/keycloak-example.json
+KEYCLOAK_EXAMPLE_JSON=config/keycloak-example.json-dontuse
 KEYCLOAL_JSON=/tmp/src/config/keycloak.json
 
 touch $KEYCLOAL_JSON
