@@ -168,7 +168,7 @@
             </activation>
             <build>
                 <plugins>
-                    <plugin>
+                    <!-- plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-enforcer-plugin</artifactId>
                         <version>${version.enforcer.maven.plugin}</version>
@@ -209,7 +209,7 @@
                                 </resource>
                             </webResources>
                         </configuration>
-                    </plugin>
+                    </plugin -->
                 </plugins>
             </build>
         </profile>
