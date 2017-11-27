@@ -10,7 +10,7 @@ KEYCLOAL_JSON=/tmp/src/config/keycloak.json
 touch $KEYCLOAL_JSON
 if [ -r "/tmp/src/$KEYCLOAK_EXAMPLE_JSON" -a "$SSO_REALM" != "" -a "$SSO_SERVER_AUTH_URL" != "" -a "$SSO_SECRET" != "" ] ; then
     touch $KEYCLOAL_JSON
-    echo -n "$KEYCLOAK_EXAMPLE_JSON found, creating $KEYCLOAL_JSON with \$SSO_REALM=$SSO_REALM, \$SSO_SERVER_AUTH_URL=$SSO_SERVER_AUTH_URL,"
+    echo -n "$KEYCLOAK_EXAMPLE_JSON found, creating $KEYCLOAL_JSON with \$SSO_REALM=$SSO_REALM, \$SSO_SERVER_AUTH_URL=$SSO_SERVER_AUTH_URL, "
     echo  "\$SSO_SECRET=$([ "$SCRIPT_DEBUG" = "true" ] && echo $SSO_SECRET || echo "<******>")"
     cat /tmp/src/$KEYCLOAK_EXAMPLE_JSON | \
 	sed "s|\"auth-server-url\": \"http://localhost:8180/auth\"|\"auth-server-url\": \"$SSO_SERVER_AUTH_URL\"| ;
