@@ -7,6 +7,7 @@ echo "Execute custom S2I assemble script..."
 KEYCLOAK_EXAMPLE_JSON=config/keycloak-example.json
 KEYCLOAL_JSON=/tmp/src/config/keycloak.json
 
+touch $KEYCLOAL_JSON
 if [ -r "/tmp/src/$KEYCLOAK_EXAMPLE_JSON" -a "$SSO_REALM" != "" -a "$SSO_SERVER_AUTH_URL" != "" ] ; then
     touch $KEYCLOAL_JSON
     echo "$KEYCLOAK_EXAMPLE_JSON found, creating $KEYCLOAL_JSON with \$SSO_SERVER_AUTH_URL=$SSO_SERVER_AUTH_URL"
