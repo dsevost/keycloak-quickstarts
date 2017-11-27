@@ -14,7 +14,7 @@ if [ -r "/tmp/src/$KEYCLOAK_EXAMPLE_JSON" -a "$SSO_REALM" != "" -a "$SSO_SERVER_
     cat /tmp/src/$KEYCLOAK_EXAMPLE_JSON | \
 	sed "s|\"auth-server-url\": \"http://localhost:8180/auth\"|\"auth-server-url\": \"$SSO_SERVER_AUTH_URL\"| ;
 	     s|\"realm\": \"master\"|\"realm\": \"$SSO_REALM\"| ;
-	     s|\"secret\": \"bce5816d-98c4-404f-a18d-bcc5cb005c79\"|\"secret\": \"$SSO_SECRET\|"
+	     s|\"secret\": \"bce5816d-98c4-404f-a18d-bcc5cb005c79\"|\"secret\": \"$SSO_SECRET\| ;
 	    " \
 	> $KEYCLOAL_JSON
 fi
